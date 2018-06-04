@@ -31,7 +31,7 @@ public class LoginController implements Initializable {
     @FXML
     private Button loginButton;
     @FXML
-    private Label loginStatu;
+    private Label loginStatus;
 
     public void initialize (URL url, ResourceBundle rb) {
 
@@ -44,8 +44,36 @@ public class LoginController implements Initializable {
         this.combobox.setItems(FXCollections.observableArrayList(option.values()));
     }
 
-    public void login(ActionEvent event) {
-        
+    public void Login(ActionEvent event) {
+        System.out.println("Login event works");
+
+        System.out.println(this.username.getText());
+        System.out.println(this.password.getText());
+        System.out.println(((option)this.combobox.getValue()).toString());
+
+        try {
+            if(this.loginModel.isLogin(this.username.getText(), this.password.getText(), ((option)this.combobox.getValue()).toString())) {
+                System.out.print("isLogin");
+                Stage stage = (Stage)this.loginButton.getScene().getWindow();
+                stage.close();
+
+                switch (((option)this.combobox.getValue()).toString()) {
+                    case "admin":
+                        adminLogin();
+                        break;
+                    case "student":
+                        studentLogin();
+                        break;
+                }
+            }
+            else {
+                this.loginStatus.setText("Wrong Credentials");
+                System.out.print("isLogin not working");
+            }
+
+        }catch(Exception localException) {
+
+        }
     }
 
     public void studentLogin() {

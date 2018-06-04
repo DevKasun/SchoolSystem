@@ -14,7 +14,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="dbstatus" layoutX="92.0" layoutY="22.0" prefHeight="17.0" prefWidth="250.0" textFill="WHITE" />
+      <Label fx:id="dbstatus" layoutX="96.0" layoutY="22.0" prefHeight="17.0" prefWidth="246.0" textFill="WHITE" />
       <TextField fx:id="username" layoutX="130.0" layoutY="64.0" prefHeight="25.0" prefWidth="197.0" style="-fx-background-radius: 20;" />
       <Label layoutX="32.0" layoutY="68.0" prefHeight="17.0" prefWidth="85.0" text="User Name" textFill="WHITE">
          <font>
@@ -26,7 +26,7 @@
          </font></Label>
       <PasswordField fx:id="password" layoutX="130.0" layoutY="105.0" prefHeight="25.0" prefWidth="197.0" style="-fx-background-radius: 20;" />
       <ComboBox fx:id="combobox" layoutX="129.0" layoutY="150.0" prefHeight="25.0" prefWidth="197.0" promptText="Admin / Student" style="-fx-background-radius: 20; -fx-background-color: #fff; -fx-background-position: center;" />
-      <Button fx:id="loginButton" layoutX="130.0" layoutY="194.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #fff; -fx-background-radius: 20;" text="Login" />
+      <Button fx:id="loginButton" layoutX="130.0" layoutY="194.0" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #fff; -fx-background-radius: 20;" text="Login" />
       <Label fx:id="loginStatus" layoutX="32.0" layoutY="150.0" prefHeight="25.0" prefWidth="85.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />

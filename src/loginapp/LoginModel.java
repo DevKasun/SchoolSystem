@@ -13,12 +13,11 @@ public class LoginModel {
     public LoginModel() {
         try {
             this.connection = DbConnection.getConnection();
-        } catch (SQLException ex) {
+        }catch(SQLException ex) {
             ex.printStackTrace();
         }
-
         if(this.connection == null) {
-            System.exit( 1);
+            System.exit(1);
         }
     }
 
@@ -26,29 +25,28 @@ public class LoginModel {
         return this.connection != null;
     }
 
-    public boolean isLogin(String user, String pass, String opt) throws Exception {
-        PreparedStatement pr = null;
+    public boolean isLogin(String user, String pass, String opt)throws Exception {
+        PreparedStatement pr =  null;
         ResultSet rs = null;
 
-        String sql = "SELECT * FROM login WHERE username = ? and password = ? and division = ?";
+        String sql = "SELECT * FROM login where username = ? and password = ? and division";
 
         try {
             pr = this.connection.prepareStatement(sql);
-            pr.setString(1, user);
-            pr.setString(2, pass);
-            pr.setString(3, opt);
+            pr.setString(1,user);
+            pr.setString(2,pass);
+            pr.setString(3,opt);
 
             rs = pr.executeQuery();
 
-            boolean bool1;
+            boolean boll1;
 
-            if(rs.next()) {
+            if (rs.next()) {
                 return true;
             }
 
             return false;
-
-        } catch (SQLException ex) {
+        }catch (SQLException ex) {
             return false;
         }
 
@@ -57,5 +55,4 @@ public class LoginModel {
             rs.close();
         }
     }
-
 }
